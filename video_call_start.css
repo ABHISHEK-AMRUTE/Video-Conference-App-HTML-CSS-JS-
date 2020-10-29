@@ -1,0 +1,209 @@
+html{
+    background: #232526;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+height: 100%;
+}
+
+body{
+    height: 100%;
+}
+
+#sample{
+    max-width: 70%;
+    max-height: 500px;
+    box-shadow: 3px 3px 3px #121212;
+}
+
+#my_camera{
+  width: fit-content;
+  height: fit-content;
+  max-width: 200px;
+  max-height: 200px;
+  float:left;
+  margin-top: 2%;
+  left: 0;
+  margin-left: 1%;
+  position: absolute;
+  z-index: 100000000000;
+ }
+
+
+#friend_cam
+{ float:left;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-shadow: 3px 3px 3px #121212;
+}
+
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: rgb(104, 104, 104); /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+  }
+  
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  #snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  /* Animations to fade the snackbar in and out */
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+
+  #mySidebar{
+    height: 100%;
+    width: 100%;
+    background: #232526;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+  }
+
+  .button_image{
+    height: 25px;
+    width: 25px;
+  margin: 5px;
+  }
+  .switch {
+    margin-top: 5px;
+    position: relative;
+    display: inline-block;
+    width:38px;
+    height: 18px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius:34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .bottom_control_bar{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    right: 0;
+    width: 100%;
+    color: white;
+  }
+  .image_bottom_control_bar{
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: 0.1s;
+  }
+  .image_bottom_control_bar:hover{
+    width: 70px;
+    height: 70px;
+  }
+  .record-bar{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 50px;
+    margin-bottom: 10px;
+
+  }
+  .image_bottom{
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .screen-options{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin-left: 50px;
+    margin-bottom: 10px;
+  }
+  #my_name{
+   
+    float:left;
+  margin-top: 3%;
+  left: 0;
+  margin-left: 1%;
+  position: absolute;
+  z-index: 100000000000;
+  }

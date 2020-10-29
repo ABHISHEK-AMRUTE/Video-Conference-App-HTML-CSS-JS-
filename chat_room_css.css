@@ -1,0 +1,104 @@
+html{
+    scroll-behavior: smooth;
+ 
+}
+body{
+    background-color: whitesmoke;   
+}
+.text_container{
+   padding: 10px;
+   border: 1px skyblue solid;
+   border-bottom-left-radius: 10px;
+   /* border-top-left-radius: 10px; */
+   border-bottom-right-radius: 10px;
+   /* border-top-right-radius: 10px; */
+   width: fit-content;
+   min-width: 100px;
+   max-width: 50%;
+   
+}
+#video-button{
+    height: 40px;
+    width: 40px;
+    right: 0;
+    position: fixed;
+    top:0;
+    margin: 20px;
+}
+.time{
+    font-size: small; 
+}
+#text{
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+.message_text{
+font-size: large;
+}
+.message_text:hover{
+    font-size:20px;
+    }
+
+#message{
+    width: 95%;
+    height: 100%;
+    border: 1px black solid;
+    margin: 10px;
+ 
+}
+#send{
+    margin: 10px;
+    /* width: 100%; */
+}
+.input_container{
+   position: fixed;
+   right: 0;
+   left: 0;
+   bottom: 0;
+ 
+   background-color: white;
+}
+.outer_container{
+    
+    
+}
+
+.upperbar{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    
+    background-color: whitesmoke;
+}
+#title{
+font-size: xx-large;
+font-weight: bold;
+}
+#status{
+color: green;
+}
+
+
+::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:  blue; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: green; 
+   
+  }
+  .file-image-format{
+    height: 100px;
+    width: 100px;
+}

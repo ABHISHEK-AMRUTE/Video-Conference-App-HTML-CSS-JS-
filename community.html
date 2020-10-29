@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <link rel="stylesheet" href="./community.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+<div style="padding: 10px;">
+
+  <div class="w3-container upperbar">
+    <div id="title" class="w3-text-grey">
+      Abhishek Amrute
+    </div>
+    <div id="status">
+      Active
+    </div>
+    <hr style="height: 2px;background-color: grey;" >
+    <div class="float-right">
+        <img src="./add-user.png" onclick="document.getElementById('id01').style.display='block'" id="add-user-to-community">
+        <img src="./facetime-button.png"  id="video-button" onclick="parent.launch_video_call()">
+        
+    </div>
+   
+</div>   
+<div class="input_container w3-row">
+    <div class="w3-col l1 m1 s1" style="text-align: center;">
+       <img src="./paperclip.png" height="50%" width="50%" style="margin-top: 10px;">
+    </div>
+    <div class="w3-col l10 m10 s10" style="text-align: center;">
+        <input id="message" class="w3-round w3-input">
+    </div>
+    <div class="w3-col l1 m1 s1" style="text-align: left;">
+        <button class="w3-button w3-blue w3-round" id="send" onclick="send_message()">Send</button>
+    </div>
+
+</div>
+<p id="text">
+    
+</p>
+</div>
+
+    <div id="id01" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+    
+          <div class="w3-center"><br>
+            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+            <img src="./add-user.png" alt="Avatar" style="width:20%" class="w3-circle w3-margin-top">
+            <br><h4 class="w3-text-grey">Add user to the community</h4>
+          </div>
+    
+          <div class="w3-container">
+            <div class="w3-section">
+              <label><b>Username</b></label>
+              <input id="user_name" class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
+              <label><b>User ID</b></label>
+              <input id="user_id" class="w3-input w3-border" type="text" placeholder="Enter userid" name="psw" required>
+              <button class="w3-button w3-block w3-green w3-section w3-padding" onclick="add_member()" type="submit">Submit</button>
+            
+            </div>
+        </div>
+    
+          <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+            <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+            
+          </div>
+    
+        </div>
+      </div>
+
+
+    <script src="./community.js"></script>
+</body>
+
+</html>

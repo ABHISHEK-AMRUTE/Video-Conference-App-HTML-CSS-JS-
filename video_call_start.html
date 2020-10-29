@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <title>getUserMedia Example</title>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" href="./video_call_start.css">
+  <script src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
+  <script src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+
+</head>
+<body id="body">
+
+  <div class="w3-sidebar w3-bar-block" style="display:none" id="mySidebar">
+    <button onclick="w3_close()" class="w3-button w3-large">Close &times;</button>
+    <video  class="w3-round-large" autoplay="true" id="friend_cam" >
+   
+    </video>
+  
+    <video  class="w3-round-xxlarge" autoplay="true" id="my_camera"  >
+    
+    </video>
+ 
+     <span id="my_name"  class="w3-black w3-padding w3-margin w3-round-large" class="my_name">
+        
+     </span>
+     <div class="bottom_control_bar w3-padding ">
+     
+         <span class="w3-black w3-padding w3-margin w3-round-large" id="friend_name">Abhishek Amrute</span><br><br>
+          <!-- <img class="image_bottom_control_bar w3-image-button" src="./video-camera.png" title="Video">  -->
+          <img  onclick="mute_audio()" class="image_bottom_control_bar w3-image-button" src="./mic.png" title="Mute Audio">
+          <img onclick="hangup()" class="image_bottom_control_bar" src="./call.png" title="Hang Up">
+          <img onclick="mute_video()" class="image_bottom_control_bar" src="./meeting.png" title="Mute Video">
+         
+         
+         
+          
+     </div>
+     <div class="w3-black record-bar w3-padding w3-round-large">
+       <div id="status" class="w3-text-red " style="margin-bottom: 10px; display: none;"></div>
+      <img id="record" onclick="start_recording()" class="image_bottom w3-image-button" src="./record.png" title="Record">
+      <img id="stop" onclick="stop_recording()" class="image_bottom w3-image-button" src="./stop.png" title="Stop Recording">
+      <a style="display:none;" id="download_link"><img onclick="download()" class="image_bottom w3-image-button" src="./download (1).png" title="Download stream"></a>
+    
+     </div>
+
+    <div class="w3-black screen-options w3-padding w3-round-large">
+      <img onclick="screenshot()" class="image_bottom w3-image-button" src="./screenshot (1).png" title="capture screenshot"> 
+      <img id="share_screen" onclick="screen_share()" class="image_bottom w3-image-button" src="./share.png" title="Share Screen"> 
+    </div>
+  </div>
+  
+
+  <div class="w3-row" style="height: 100%;">
+    <div class="w3-col m4 l4 w3-text-white" style="height: 100%; text-align: center; margin-top: 200px; ">
+      <div class="w3-margin">
+        <!-- <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button> -->
+        <div class="w3-xxxlarge" id="title">Hello</div>
+        <h2>Let's connect virtually</h2>
+        <br><br>
+        <span class="w3-blue w3-round-large w3-padding w3-large w3-button" onclick="make_call();w3_open();">Call Now</span>
+        <br><br>
+        <h3>Share Your ID with friends or enter their ID's to start call.</h3>
+        <br>
+        <span class="w3-blue w3-button w3-round w3-padding w3-large" > <span id="my_id" onclick="copy_id()">5462189886XXXX</span> &nbsp;&nbsp; ⎘ </span>
+        <br>
+        <br><br>
+        <input id="id" class="w3-round w3-padding w3-large" style="border: 1px skyblue solid;background-color: transparent;color: white;" placeholder="Your frnd's ID"></input>
+        <br><br><br>
+        <span class="w3-blue w3-round-large w3-padding w3-large w3-button" onclick="make_call();w3_open();">📹 Start call</span>
+      </div>
+    </div>
+    <div class="w3-col m8 l8" style="height: 100%;text-align: center;margin-top: 13%;">
+       <video  class="w3-round-large" autoplay="true" id="sample" >
+         
+       </video><br>
+       <span style="text-align: center;" id="control_bar">
+        <img src="./share.png" class="button_image">
+        <label class="switch">
+          <input type="checkbox" id="share">
+          <span class="slider round"></span>
+        </label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <img src="./microphone (1).png" class="button_image">
+          <label class="switch">
+            <input type="checkbox"  id="audio">
+            <span class="slider round"></span>
+          </label>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <img src="./video-camera.png" class="button_image"> 
+          <label class="switch">
+            <input type="checkbox" checked id="video">
+            <span class="slider round"></span>
+          </label>
+        </span>
+     </div>
+  </div>
+  <div id="snackbar">Text copied to clipboard.</div>
+  <canvas style="display:none;"></canvas>
+  <img id="img" src="" />
+    <audio loop id="ring" src="./office_phone_ringigng.mp3" >
+</body>
+<script src="./video_call_start.js"></script>
+</html>

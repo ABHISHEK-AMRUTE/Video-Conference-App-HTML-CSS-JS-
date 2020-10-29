@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<title>Chat App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="./main.css">
+<script src="./user_infromation.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
+
+<body id="body">
+
+  <div id="mySidebar" class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="leftMenu">
+    
+    <div style="background: #007786;text-align: center;position: sticky;
+    position: -webkit-sticky;
+    top: 0;">
+      <button onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-text-white">Hide list</button>
+      <img onclick="one_to_one()" src="./communications.png" class=" navigation_images">
+      <img onclick="community()" src="./talk.png" class=" navigation_images">
+      <img onclick="notifications()" src="./chat.png" class=" navigation_images">
+      <img onclick="openRightMenu();load_profile(userid);" src="./user (1).png" class=" navigation_images">
+
+    </div>
+
+    <div class="grid">
+      <div >  <h3 id="list-title">Recent Chats</h3></div>
+      <div style="text-align: center;background-color: #007786; visibility: collapse;" id="div_add_community">  <img onclick="document.getElementById('id02').style.display='block'" class="addcomm" src="./add (1).png"  ></div>
+    </div>
+   
+    
+   
+    <div id="list">
+      
+    </div>
+  </div>
+
+<!-- ////////////////// -->
+  <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="community_info_side_bar">
+    
+    <div style="background: #007786;text-align: center;">
+      <button onclick="closeRightMenu_community()" class="w3-bar-item w3-button w3-large w3-text-white">Hide</button>
+    </div>
+    <div class="profile-header">
+      <img src="./avatar.png" id="profile_pic_community" class="profile_photo">
+      <h3 id="name_community">Abhishek Amrute</h3>
+    </div>
+    <div class="profile-body">
+      <h6 id="description_community" class="w3-text-grey">Description : Available</h6>
+    </div>
+    <h4 class="w3-text-grey" style="text-align: center;">Members</h4>
+    <div id="member-list">
+
+    </div>
+  </div>
+
+<!-- //////////////////////// -->
+  <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;" id="rightMenu">
+    <div style="background: #007786;text-align: center;">
+     
+      <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large w3-text-white">Hide</button>
+    </div>
+   
+    <!-- <a href="#" class="w3-bar-item w3-button">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button">Link 3</a> -->
+    <div class="profile-header">
+      <img src="./avatar.png" id="profile_pic" class="profile_photo">
+      <h3 id="name">Abhishek Amrute</h3>
+
+    </div>
+    <div class="profile-body" >
+    <table style="width: 100%;">
+      <tr>
+        <td>Phone Number  </td>
+        <td>  <h6 id="number" class="w3-text-grey">Phone Number : </h6></td>
+      </tr>
+      <tr>
+        <td>Account Type   </td>
+        <td>  <h6 id="account_type" class="w3-text-grey">Account Type : Patient</h6></td>
+      </tr>
+      <tr>
+        <td> Description</td>
+        <td>   <h6 id="description" class="w3-text-grey">Description : Available</h6></td>
+      </tr>
+      <tr>
+        <td> UserId</td>
+        <td> <h6 id="userID" class="w3-text-grey">UserId : hello123</h6> </td>
+      </tr>
+    </table>
+
+     
+     
+    
+     
+    </div>
+
+  </div>
+
+  <div  id="main">
+    <div class="w3-teal">
+      <button id="openNav" class="w3-button w3-blue w3-xlarge w3-left " onclick="w3_open()">&#9776;</button>
+        </div>
+  
+   
+  
+    <iframe id="iframe_id" class="iframe  w3-card-4" src="http://127.0.0.1:5500/no-content.html">Your browser does not supprot the iframe degrade it :)</iframe>
+   
+  </div>
+  <script src="./main_page.js"></script>
+
+
+
+   <!-- ///model for community -->
+
+
+   <div id="id02" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+      <div class="w3-center"><br>
+        <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+        <img src="./add.png" alt="Avatar" style="width:20%" class="w3-circle w3-margin-top">
+        <br><h4 class="w3-text-grey">Create community</h4> 
+      </div>
+
+      <div class="w3-container" >
+        <div class="w3-section">
+          <label><b>Name for community</b></label>
+          <input id="community_name" class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter name" name="usrname" required>
+          <label><b>Description</b></label>
+          <input id="description_of_community" class="w3-input w3-border" type="text" placeholder="Enter description" name="psw" required>
+          <button id="create_community_button" onclick="create_community()" class="w3-button w3-block w3-green w3-section w3-padding" type="submit">Create community</button>
+        
+        </div>
+      </div>
+
+      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <button  type="button" class="w3-button w3-red">Cancel</button>
+       
+      </div>
+
+    </div>
+  </div>
+
+   <!-- ////////////// -->
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+
+html{
+    height: 100%; 
+}
+body{
+    height: 100%;
+    text-align: center;
+    width: 100%;
+    background: #33f09e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #44f2a6, #33f09e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #44f2a6, #33f09e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+.index_frame{
+    margin-top: 5%;
+    height:80%;
+    width: 75%;
+    border: 1px #018e51 solid;
+    box-shadow: black;
+}
+::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #007786; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #007786; 
+   
+  }
